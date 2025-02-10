@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Roll No & ID Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input { margin: 10px; padding: 8px; width: 250px; }
+        button { padding: 10px 20px; background: blue; color: white; border: none; cursor: pointer; }
+        button:hover { background: darkblue; }
+        .output { margin-top: 20px; font-size: 18px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Board Roll No & ID Generator</h2>
+    
+    <input type="text" id="name" placeholder="Enter Your Name"><br>
+    <input type="text" id="motherName" placeholder="Enter Mother's Name"><br>
+    <input type="text" id="fatherName" placeholder="Enter Father's Name"><br>
+    <input type="number" id="schoolRollNo" placeholder="Enter School Roll No"><br>
+
+    <button onclick="generateDetails()">Generate</button>
+
+    <div class="output">
+        <p id="boardRollNo"></p>
+        <p id="id"></p>
+    </div>
+
+    <script>
+        function generateDetails() {
+            let name = document.getElementById("name").value.trim();
+            let motherName = document.getElementById("motherName").value.trim();
+            let schoolRollNo = document.getElementById("schoolRollNo").value.trim();
+            
+            if (name === "" || motherName === "" || schoolRollNo === "") {
+                alert("Please enter all details!");
+                return;
+            }
+
+            // Generate Board Roll No
+            let boardRollNo = "25193" + (parseInt(schoolRollNo) + 266);
+
+            // Generate ID
+            let firstNameInitial = name.charAt(0).toUpperCase();
+            let motherNameInitial = motherName.charAt(0).toUpperCase();
+            let idNumber = boardRollNo.slice(5, 7);  // 6th and 7th digit
+            let id = firstNameInitial + motherNameInitial + idNumber + "8144";
+
+            // Display results
+            document.getElementById("boardRollNo").innerText = "Board Roll No: " + boardRollNo;
+            document.getElementById("id").innerText = "ID: " + id;
+        }
+    </script>
+
+</body>
+</html>
