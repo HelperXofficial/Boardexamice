@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,48 +11,47 @@
         .output { margin-top: 20px; font-size: 18px; font-weight: bold; }
     </style>
 </head>
-<body>
+<body><h2>Board Roll No & Admit Card Id </h2>
+<h1>Hack?</h1><img src="https://i.ibb.co/39GJwhgF/acha-puneet-superstar-acha.gif" alt="Board Roll Number Generator" width="200" style="display: block; margin: auto;">
+<h2>💀</h2>
 
-    <h2>Board Roll No & Admit Card Id </h2>
-    <h2>💀</h2>
-    
-    <input type="text" id="name" placeholder="Enter Your Name"><br>
-    <input type="text" id="motherName" placeholder="Enter Mother's Name"><br>
-    <input type="text" id="fatherName" placeholder="Enter Father's Name"><br>
-    <input type="number" id="schoolRollNo" placeholder="Enter School Roll No"><br>
+<input type="text" id="name" placeholder="Enter Your Name"><br>
+<input type="text" id="motherName" placeholder="Enter Mother's Name"><br>
+<input type="text" id="fatherName" placeholder="Enter Father's Name"><br>
+<input type="number" id="schoolRollNo" placeholder="Enter School Roll No"><br>
 
-    <button onclick="generateDetails()">Generate</button>
-    <br><br><i><b>Made by Arnav Sharma</i></b></br></br>
-    <div class="output">
-        <p id="boardRollNo"></p>
-        <p id="id"></p>
-    </div>
+<button onclick="generateDetails()">Generate</button>
+<br><br><i><b>Made by Arnav Sharma</i></b></br></br>
+<div class="output">
+    <p id="boardRollNo"></p>
+    <p id="id"></p>
+</div>
 
-    <script>
-        function generateDetails() {
-            let name = document.getElementById("name").value.trim();
-            let motherName = document.getElementById("motherName").value.trim();
-            let schoolRollNo = document.getElementById("schoolRollNo").value.trim();
-            
-            if (name === "" || motherName === "" || schoolRollNo === "") {
-                alert("Please enter all details!");
-                return;
-            }
-
-            // Generate Board Roll No
-            let boardRollNo = "25193" + (parseInt(schoolRollNo) + 266);
-
-            // Generate ID
-            let firstNameInitial = name.charAt(0).toUpperCase();
-            let motherNameInitial = motherName.charAt(0).toUpperCase();
-            let idNumber = boardRollNo.slice(5, 7);  // 6th and 7th digit
-            let id = firstNameInitial + motherNameInitial + idNumber + "8144";
-
-            // Display results
-            document.getElementById("boardRollNo").innerText = "Board Roll No: " + boardRollNo;
-            document.getElementById("id").innerText = "Admit Card ID: " + id;
+<script>
+    function generateDetails() {
+        let name = document.getElementById("name").value.trim();
+        let motherName = document.getElementById("motherName").value.trim();
+        let schoolRollNo = document.getElementById("schoolRollNo").value.trim();
+        
+        if (name === "" || motherName === "" || schoolRollNo === "") {
+            alert("Please enter all details!");
+            return;
         }
-    </script>
+
+        // Generate Board Roll No
+        let boardRollNo = "25193" + (parseInt(schoolRollNo) + 266);
+
+        // Generate ID
+        let firstNameInitial = name.charAt(0).toUpperCase();
+        let motherNameInitial = motherName.charAt(0).toUpperCase();
+        let idNumber = boardRollNo.slice(5, 7);  // 6th and 7th digit
+        let id = firstNameInitial + motherNameInitial + idNumber + "8144";
+
+        // Display results
+        document.getElementById("boardRollNo").innerText = "Board Roll No: " + boardRollNo;
+        document.getElementById("id").innerText = "Admit Card ID: " + id;
+    }
+</script>
 
 </body>
 </html>
